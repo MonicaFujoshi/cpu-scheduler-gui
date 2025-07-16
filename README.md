@@ -126,4 +126,4 @@ Jasmine Omandam 	  	UI Design, FCFS/SJF Logic
 ## Run the app:
 
 ```bash
-python scheduler_gui.py
+python cpu_scheduler_gui.py
