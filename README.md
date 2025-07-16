@@ -7,20 +7,28 @@ A graphical simulation of CPU scheduling algorithms implemented using Python's `
 
 ##  Features
 
-- Intuitive graphical user interface (GUI)
-- Manual or random process input
-- Gantt chart visualization
-- Performance metrics:
-  - Completion Time (CT)
-  - Turnaround Time (TAT)
-  - Response Time (RT)
-  - Averages of TAT and RT
-- Supports 5 algorithms:
-  - First-Come First-Served (FCFS)
-  - Shortest Job First (SJF)
-  - Shortest Remaining Time First (SRTF)
-  - Round Robin (with customizable quantum)
-  - Multi-Level Feedback Queue (MLFQ)
+**Supports 5 Scheduling Algorithms:**
+FCFS, SJF (Non-preemptive), SRTF (Preemptive), Round Robin, MLFQ
+
+**Input Options:**
+Manual input or randomized process generation
+
+**Output Includes:**
+Gantt chart (with queue level in MLFQ)
+Detailed process table (PID, AT, BT, CT, TAT, RT)
+Average Turnaround Time (TAT) and Response Time (RT)
+
+**Algorithm Behaviors:**
+Round Robin: Custom time slice
+MLFQ: Multiple levels, custom quantum & allotments, dynamic demotion
+
+**Utility Features:**
+Cross-platform screen clearing
+Reset function for process reuse
+Menu-driven, user-friendly interface
+
+**Purpose:**
+Ideal for simulating, testing, and comparing CPU scheduling algorithms in an educational or project setting.
 
 ## Algorithms Overview
 Algorithm	Description
@@ -32,56 +40,55 @@ MLFQ	Multi-level queues with decreasing priorities. Each queue uses different qu
 
 ## Sample Input
 
-PID	Arrival	Burst
-P0	2	8
-P1	2	4
-P2	1	6
-P3	2	9
-P4	1	8
+P1 -> Arrival: 1, Burst: 9
+P2 -> Arrival: 4, Burst: 5
+P3 -> Arrival: 9, Burst: 2
+P4 -> Arrival: 8, Burst: 1
+P5 -> Arrival: 2, Burst: 3
 
 ## Expected Output
 
 **FCFS (First-Come, First-Served)**
-PID	AT	BT	ST	CT	TAT	RT
-P2	1	6	1	7	6	0
-P4	1	8	7	15	14	6
-P0	2	8	15	23	21	13
-P1	2	4	23	27	25	21
-P3	2	9	27	36	34	25
-Average TAT: 20.00
-Average RT: 13.00
+PID	AT	BT	CT	TAT	RT
+P1	1 	9 	10	9 	0
+P2	4 	5 	18 	14 	9
+P3	9 	2 	21 	12 	10
+P4	8 	1 	19 	11 	10
+P5	2 	3 	13 	11 	8
+Average TAT: 11.40
+Average RT : 7.40
 
 **SJF (Shortest Job First)**
-PID	AT	BT	ST	CT	TAT	RT
-P2	1	6	1	7	6	0
-P1	2	4	7	11	9	5
-P4	1	8	11	19	18	10
-P0	2	8	19	27	25	17
-P3	2	9	27	36	34	25
-Average TAT: 18.40
-Average RT: 11.40
+PID	AT	BT	CT	TAT	RT
+P1	1 	9 	10	9 	0
+P2	4 	5 	21 	17 	12
+P3	9 	2 	13 	4 	2
+P4	8 	1   11 	3 	2
+P5	2 	3 	16 	14 	11
+Average TAT: 9.40
+Average RT : 5.40
 
 **SRTF (Shortest Remaining Time First)**
-PID	AT	BT	ST	CT	TAT	RT
-P2	1	6	1	11	10	0
-P1	2	4	2	6	4	0
-P0	2	8	11	19	17	9
-P4	1	8	19	27	26	18
-P3	2	9	27	36	34	25
-Average TAT: 18.20
-Average RT: 10.40
+PID	AT	BT	CT	TAT	RT
+P1	1 	9 	21	20	0
+P2	4 	5 	11 	7 	1
+P3	9 	2 	13 	4 	2
+P4	8 	1 	9 	1 	0
+P5	2 	3 	5 	3 	0
+Average TAT: 7.00
+Average RT : 0.60
 
 **⏱️ Round Robin (Quantum = 3)**
 PID	AT	BT	CT	TAT	RT
-P2	1	6	19	18	0
-P4	1	8	31	30	3
-P0	2	8	33	31	5
-P1	2	4	26	24	8
-P3	2	9	36	34	11
-Average TAT: 27.4
-Average RT: 5.4
+P1	1 	9 	21	20	0
+P2	4	  5 	18	14	3
+P3	9 	2 	16	7 	5
+P4	8 	1 	14	6	  5
+P5	2 	3 	7	  5	  2
+Average TAT: 10.40  
+Average RT : 3.00
 
-**🧮 MLFQ (Quanta: Q1=3, Q2=5, Q3=3, Q4=5)**
+**MLFQ (Quanta: Q1=3,5 , Q2=4,5 , Q3=5,5 , Q4=5,5)**
 PID	AT	BT	CT	TAT	RT
 P2	1	6	19	18	0
 P4	1	8	24	23	3
@@ -106,24 +113,25 @@ Average RT: 5.4
 
 
 ## Known Issues / Limitations
--GUI may lag with more than ~20 processes.
--No process priority support (for now).
--MLFQ fixed to 4 levels only.
--No persistent save/load for process sets.
 
+-No GUI (command-line only).
+-SJF assumes non-preemptive implementation.
+-No priority-based scheduling implemented.
+-MLFQ is limited to 4 levels (can be expanded).
+-No persistent logging of results (output only to screen).
 
 ## Team Members & Contributions
+
 **Name	                           Role**
-Martina Calledo      	UI Design,Round Robin/MLFQ Algorithms
-Jasmine Omandam 	  	UI Design, FCFS/SJF Logic
+Martina Calledo      	Round Robin/MLFQ Logic
+Jasmine Omandam 	  	FCFS/SJF/SRTF Logic
 
 
 ## Requirements
 
-- Python 3.x
-- `tkinter` (usually included with Python)
+- Dev C++ (IDE)
+
 
 ## Run the app:
 
-```bash
-python cpu_scheduler_gui.py
+compile cpu_scheduler.cpp
