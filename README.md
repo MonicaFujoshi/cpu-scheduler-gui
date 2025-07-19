@@ -183,7 +183,9 @@ Average Waiting Time: 20.60
 ## Team Members & Contributions
 
 **Name	                           Role**
+
 Martina Calledo      	Round Robin/MLFQ Logic
+
 Jasmine Omandam 	  	FCFS/SJF/SRTF Logic
 
 
