@@ -87,46 +87,76 @@ PID	AT	BT	CT	TAT	RT	WT
 4  	1  	7  	26	25	18	18
 
 Average Turnaround Time: 18.20
+
 Average Response Time: 11.00
+
 Average Waiting Time: 11.00
 
 
 **SRTF (Shortest Remaining Time First)**
+
 PID	AT	BT	CT	TAT	RT	WT
+
 0  	3  	4  	7  	4  	0  	0
+
 1  	2  	7  	19	17	10	10
+
 2  	0  	8  	12	12	0  	4
+
 3  	4  	10	36	32	22	22
+
 4  	1  	7  	26	25	18	18
 
+
 Average Turnaround Time: 18.00
+
 Average Response Time: 10.00
+
 Average Waiting Time: 10.80
 
 
 **⏱️ Round Robin (Quantum = 3)**
+
 PID	AT	BT	CT	TAT	RT	WT
+
 0  	3  	4  	25	22	6  	18
+
 1  	2  	7  	32	30	4  	23
+
 2  	0  	8  	27	27	0  	19
+
 3  	4  	10	36	32	11	22
+
 4  	1  	7  	31	30	2  	23
 
+
 Average Turnaround Time: 28.20
+
 Average Response Time: 4.60
+
 Average Waiting Time: 21.00
 
 **MLFQ (Quanta: Q1=1,3 , Q2=1,4 , Q3=1,5 , Q4=1,6)**
+
 PID	AT	BT	CT	TAT	RT	WT
+
 0  	3  	4  	19	16	2	12
+
 1  	2  	7  	31	29	1	22
+
 2  	0  	8  	33	33	0	25
+
 3  	4  	10	36	32	3	22
+
 4  	1  	7  	30	29	0	22
 
+
 Average Turnaround Time: 27.80
+
 Average Response Time: 1.20
+
 Average Waiting Time: 20.60
+
 
 ## Screenshots
 **FCFS** 
