@@ -14,28 +14,42 @@ FCFS, SJF (Non-preemptive), SRTF (Preemptive), Round Robin, MLFQ
 Manual input or randomized process generation
 
 **Output Includes:**
+
 Gantt chart (with queue level in MLFQ)
+
 Detailed process table (PID, AT, BT, CT, TAT, RT)
+
 Average Turnaround Time (TAT) and Response Time (RT)
 
 **Algorithm Behaviors:**
+
 Round Robin: Custom time slice
+
 MLFQ: Multiple levels, custom quantum & allotments, dynamic demotion
 
 **Utility Features:**
+
 Cross-platform screen clearing
+
 Reset function for process reuse
+
 Menu-driven, user-friendly interface
 
 **Purpose:**
 Ideal for simulating, testing, and comparing CPU scheduling algorithms in an educational or project setting.
 
 ## Algorithms Overview
+
 Algorithm	Description
+
 FCFS	Processes are scheduled in order of arrival.
+
 SJF	Non-preemptive. Selects process with the shortest burst time available.
+
 SRTF	Preemptive version of SJF. Picks the process with the shortest remaining time.
+
 Round Robin	Processes get equal CPU time (quantum). Useful for time-sharing systems.
+
 MLFQ	Multi-level queues with decreasing priorities. Each queue uses different quantum.
 
 ## Sample Input
@@ -175,9 +189,13 @@ Average Waiting Time: 20.60
 ## Known Issues / Limitations
 
 -No GUI (command-line only).
+
 -SJF assumes non-preemptive implementation.
+
 -No priority-based scheduling implemented.
+
 -MLFQ is limited to 4 levels (can be expanded).
+
 -No persistent logging of results (output only to screen).
 
 ## Team Members & Contributions
