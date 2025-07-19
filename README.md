@@ -41,9 +41,13 @@ MLFQ	Multi-level queues with decreasing priorities. Each queue uses different qu
 ## Sample Input
 
 P0 → Arrival: 3, Burst: 4
+
 P1 → Arrival: 2, Burst: 7
+
 P2 → Arrival: 0, Burst: 8
+
 P3 → Arrival: 4, Burst: 10
+
 P4 → Arrival: 1, Burst: 7
 
 ## Expected Output
