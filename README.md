@@ -53,23 +53,37 @@ P4 → Arrival: 1, Burst: 7
 ## Expected Output
 
 **FCFS (First-Come, First-Served)**
+
 PID	AT	BT	CT	TAT	RT	WT
+
 0  	3  	4  	26	23	19	19
+
 1  	2  	7  	22	20	13	13
+
 2  	0  	8  	8  	8  	0  	0
+
 3 	4  	10	36	32	22  22
+
 4  	1  	7  	15	14	7  	7
 
 Average Turnaround Time: 19.40
+
 Average Response Time: 12.20
+
 Average Waiting Time: 12.20
 
 **SJF (Shortest Job First)**
+
 PID	AT	BT	CT	TAT	RT	WT
+
 0  	3  	4  	12  9  	5  	5
+
 1  	2  	7  	19	17	10	10
+
 2  	0  	8  	8  	8  	0  	0
+
 3  	4  	10	36	32	22	22
+
 4  	1  	7  	26	25	18	18
 
 Average Turnaround Time: 18.20
