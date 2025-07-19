@@ -189,9 +189,11 @@ Jasmine Omandam 	  	FCFS/SJF/SRTF Logic
 
 ## Requirements
 
-- Dev C++ (IDE)
+Python + Tkintr
 
 
 ## Run the app:
 
-compile cpu_scheduler.cpp
+-bashh
+
+python cpu_scheduler_gui.py
