@@ -40,63 +40,75 @@ MLFQ	Multi-level queues with decreasing priorities. Each queue uses different qu
 
 ## Sample Input
 
-P1 -> Arrival: 1, Burst: 9
-P2 -> Arrival: 4, Burst: 5
-P3 -> Arrival: 9, Burst: 2
-P4 -> Arrival: 8, Burst: 1
-P5 -> Arrival: 2, Burst: 3
+P0 → Arrival: 3, Burst: 4
+P1 → Arrival: 2, Burst: 7
+P2 → Arrival: 0, Burst: 8
+P3 → Arrival: 4, Burst: 10
+P4 → Arrival: 1, Burst: 7
 
 ## Expected Output
 
 **FCFS (First-Come, First-Served)**
-PID	AT	BT	CT	TAT	RT
-P1	1 	9 	10	9 	0
-P2	4 	5 	18 	14 	9
-P3	9 	2 	21 	12 	10
-P4	8 	1 	19 	11 	10
-P5	2 	3 	13 	11 	8
-Average TAT: 11.40
-Average RT : 7.40
+PID	AT	BT	CT	TAT	RT	WT
+0  	3  	4  	26	23	19	19
+1  	2  	7  	22	20	13	13
+2  	0  	8  	8  	8  	0  	0
+3 	4  	10	36	32	22  22
+4  	1  	7  	15	14	7  	7
+
+Average Turnaround Time: 19.40
+Average Response Time: 12.20
+Average Waiting Time: 12.20
 
 **SJF (Shortest Job First)**
-PID	AT	BT	CT	TAT	RT
-P1	1 	9 	10	9 	0
-P2	4 	5 	21 	17 	12
-P3	9 	2 	13 	4 	2
-P4	8 	1   11 	3 	2
-P5	2 	3 	16 	14 	11
-Average TAT: 9.40
-Average RT : 5.40
+PID	AT	BT	CT	TAT	RT	WT
+0  	3  	4  	12  9  	5  	5
+1  	2  	7  	19	17	10	10
+2  	0  	8  	8  	8  	0  	0
+3  	4  	10	36	32	22	22
+4  	1  	7  	26	25	18	18
+
+Average Turnaround Time: 18.20
+Average Response Time: 11.00
+Average Waiting Time: 11.00
+
 
 **SRTF (Shortest Remaining Time First)**
-PID	AT	BT	CT	TAT	RT
-P1	1 	9 	21	20	0
-P2	4 	5 	11 	7 	1
-P3	9 	2 	13 	4 	2
-P4	8 	1 	9 	1 	0
-P5	2 	3 	5 	3 	0
-Average TAT: 7.00
-Average RT : 0.60
+PID	AT	BT	CT	TAT	RT	WT
+0  	3  	4  	7  	4  	0  	0
+1  	2  	7  	19	17	10	10
+2  	0  	8  	12	12	0  	4
+3  	4  	10	36	32	22	22
+4  	1  	7  	26	25	18	18
+
+Average Turnaround Time: 18.00
+Average Response Time: 10.00
+Average Waiting Time: 10.80
+
 
 **⏱️ Round Robin (Quantum = 3)**
-PID	AT	BT	CT	TAT	RT
-P1	1 	9 	21	20	0
-P2	4	  5 	18	14	3
-P3	9 	2 	16	7 	5
-P4	8 	1 	14	6	  5
-P5	2 	3 	7	  5	  2
-Average TAT: 10.40  
-Average RT : 3.00
+PID	AT	BT	CT	TAT	RT	WT
+0  	3  	4  	25	22	6  	18
+1  	2  	7  	32	30	4  	23
+2  	0  	8  	27	27	0  	19
+3  	4  	10	36	32	11	22
+4  	1  	7  	31	30	2  	23
 
-**MLFQ (Quanta: Q1=3,5 , Q2=4,5 , Q3=5,5 , Q4=5,5)**
-PID	AT	BT	CT	TAT	RT
-P2	1	6	19	18	0
-P4	1	8	24	23	3
-P0	2	8	29	27	5
-P1	2	4	30	28	8
-P3	2	9	36	34	11
-Average TAT: 26.0
-Average RT: 5.4
+Average Turnaround Time: 28.20
+Average Response Time: 4.60
+Average Waiting Time: 21.00
+
+**MLFQ (Quanta: Q1=1,3 , Q2=1,4 , Q3=1,5 , Q4=1,6)**
+PID	AT	BT	CT	TAT	RT	WT
+0  	3  	4  	19	16	2	12
+1  	2  	7  	31	29	1	22
+2  	0  	8  	33	33	0	25
+3  	4  	10	36	32	3	22
+4  	1  	7  	30	29	0	22
+
+Average Turnaround Time: 27.80
+Average Response Time: 1.20
+Average Waiting Time: 20.60
 
 ## Screenshots
 **FCFS** 
